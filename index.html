@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Device Navigator</title>
+  </head>
+  <body>
+    <table>
+      <div>
+        <i> This page is for temprary testing and will be removed soon</i>
+      </div>
+      <tbody width="100%">
+        <tr>
+          <td>
+            Device Type
+          </td>
+          <td id="type"></td>
+        </tr>
+        <tr>
+          <td>
+            Device Width
+          </td>
+          <td id="width"></td>
+        </tr>
+        <tr>
+          <td>
+            Device Navigator
+          </td>
+          <td id="navig"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script type="text/javascript">
+      var type = document.getElementById("type");
+      var width = document.getElementById("width");
+      var navig = document.getElementById("navig");
+
+      var navigator1 = window.navigator.userAgent;
+      navig.innerHTML = navigator1;
+      var navigator2 = navigator1.match(/Mobi/);
+      if(navigator2){
+        type.innerHTML = "Mobile";
+      }else {
+        type.innerHTML = "Not A Mobile";
+      }
+      width.innerHTML = window.innerWidth + 'px';
+    </script>
+  </body>
+</html>
